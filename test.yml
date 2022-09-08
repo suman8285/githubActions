@@ -1,0 +1,32 @@
+name: suman
+age: 38
+address: "test:tet"
+active: true
+key:
+  key: value
+  key2: 33
+
+jsonObject: {
+  key: value, key2: value}
+
+array:
+    - item1
+    - item2
+    - {key: value, key2: value}
+jsonarray: [item1, item2]
+
+objectArray: 
+    - key: value
+      key2: value
+    - key: value
+      key2: value
+longtext: >
+    suman suman 
+    suman suamn 
+    suamn suman 
+    suman
+longtextwithNewline: |
+    suman suman 
+    suman suamn 
+    suamn suman 
+    suman
