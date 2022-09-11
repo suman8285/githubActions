@@ -5,8 +5,20 @@ on:
     branches: [ "main","master" ]
   pull_request:
     branches: [ "main","master" ]
+    types: [opened, assigned, reopened]
 
 jobs:
+  decrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Decrypt file
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$GPGSECRET" --output $HOME/secret.json secret.json.gpg 
+
+        env:
+          GPGSECRET: ${{ secrets.GPGSECRET}}
+      - name: print decrypted file
+        run: cat $HOME/secret.json
   run-shell-command:
 
     runs-on: ubuntu-latest
